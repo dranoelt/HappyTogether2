@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.happytogether2.Login.EXTRA_DATA
 import com.example.happytogether2.MainActivity
+import com.example.happytogether2.R
 import com.example.happytogether2.databinding.HomeFragmentBinding
 
 class HomeFragment : Fragment() {
