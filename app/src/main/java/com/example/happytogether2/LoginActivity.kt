@@ -1,5 +1,6 @@
 package com.example.happytogether2
 
+import android.app.Application
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,16 +13,15 @@ import androidx.room.Room
 import com.example.happytogether2.Login.LoginFragment
 import com.example.happytogether2.database.MyDBRoomHelper
 import com.example.happytogether2.database.User
+import com.example.happytogether2.database.UserDAO
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 class LoginActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         val db = Room.databaseBuilder(
             applicationContext,
             MyDBRoomHelper::class.java,

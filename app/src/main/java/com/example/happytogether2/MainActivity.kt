@@ -2,6 +2,7 @@ package com.example.happytogether2
 
 import android.content.Intent
 import android.os.Bundle
+import android.service.autofill.UserData
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -10,6 +11,8 @@ import androidx.fragment.app.commit
 import androidx.room.Room
 import com.example.happytogether2.Login.EXTRA_DATA
 import com.example.happytogether2.database.MyDBRoomHelper
+import com.example.happytogether2.database.User
+import com.example.happytogether2.database.UserDAO
 import com.example.happytogether2.databinding.ActivityMainBinding
 import com.example.happytogether2.ui.CartFragment
 import com.example.happytogether2.ui.HomeFragment
@@ -38,7 +41,6 @@ class MainActivity : AppCompatActivity() {
                 add<HomeFragment>(R.id.container, args = myBundle)
             }
         }
-
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(mNavigationItemSelectedListener)
     }
 
@@ -87,7 +89,6 @@ class MainActivity : AppCompatActivity() {
         doAsync {
             db.userDao().deleteById(a)
         }
-
         var intent = Intent(applicationContext, LoginActivity::class.java)
         startActivity(intent)
         Toast.makeText(this, "Account Deleted", Toast.LENGTH_SHORT).show()
