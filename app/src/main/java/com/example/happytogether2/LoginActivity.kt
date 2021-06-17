@@ -11,6 +11,7 @@ import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.room.Room
 import com.example.happytogether2.Login.LoginFragment
+import com.example.happytogether2.database.HistoryTransaction
 import com.example.happytogether2.database.MyDBRoomHelper
 import com.example.happytogether2.database.User
 import com.example.happytogether2.database.UserDAO
@@ -18,6 +19,8 @@ import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
 class LoginActivity : AppCompatActivity() {
+
+    private var myDB: HistoryTransaction? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,7 @@ class LoginActivity : AppCompatActivity() {
             "myData.db"
         ).build()
 
+        HistoryTransaction(this).deleteAll()
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)

@@ -22,7 +22,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: FragmentViewModel
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,11 +29,7 @@ class HomeFragment : Fragment() {
         binding = HomeFragmentBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        binding.userName.text = arguments?.getString(EXTRA_DATA)
-        var user_name = binding.userName.text
-        binding.deleteAcc.setOnClickListener {
-            (activity as MainActivity).del(user_name.toString())
-        }
+
         return view
     }
 

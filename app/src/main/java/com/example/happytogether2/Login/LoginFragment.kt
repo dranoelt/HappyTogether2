@@ -8,10 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.happytogether2.LoginActivity
-import com.example.happytogether2.MainActivity
-import com.example.happytogether2.R
-import com.example.happytogether2.TestData
+import com.example.happytogether2.*
 import com.example.happytogether2.databinding.FragmentLoginBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -58,11 +55,11 @@ class LoginFragment : Fragment() {
         var pass = binding.password.text
         binding.loginBtn.setOnClickListener{
             if (user.toString() == EMAIL_TEST && pass.toString() == PASSWORD_TEST) {
-                var intent = Intent(this.activity, MainActivity::class.java)
+                var intent = Intent(this.activity, PreLoad::class.java)
                 startActivity(intent)
             }
             else if ((activity as LoginActivity).check(user.toString(), pass.toString())) {
-                var intent = Intent(this.activity, MainActivity::class.java)
+                var intent = Intent(this.activity, PreLoad::class.java)
                 intent.putExtra(EXTRA_DATA,user.toString())
                 startActivity(intent)
             }

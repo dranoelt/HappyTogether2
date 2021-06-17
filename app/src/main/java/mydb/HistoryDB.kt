@@ -1,4 +1,4 @@
-package com.example.happytogether2.database
+package mydb
 
 import android.provider.BaseColumns
 

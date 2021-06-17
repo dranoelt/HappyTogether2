@@ -3,10 +3,14 @@ package com.example.happytogether2.database
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import mydb.historyDB
 
-class myDBHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+class myDBHelper(context: Context) : SQLiteOpenHelper(
+        context, DATABASE_NAME, null, DATABASE_VERSION) {
+
     override fun onCreate(db: SQLiteDatabase?) {
-        val CREATE_HISTORY_TABLE = ("CREATE TABLE " + historyDB.historyTable.TABLE_HISTORY + "(" +
+        val CREATE_HISTORY_TABLE = ("CREATE TABLE " +
+                historyDB.historyTable.TABLE_HISTORY + "(" +
                 historyDB.historyTable.COLUMN_ID + "INTEGER PRIMARY KEY," +
                 historyDB.historyTable.COLUMN_TITLE + " TEXT," +
                 historyDB.historyTable.COLUMN_TGL + " TEXT," +
