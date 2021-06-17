@@ -35,10 +35,6 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
-
-
-
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 var d = intent.getStringExtra(EXTRA_DATA)
@@ -76,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         false
     }
 
-    private fun openFragment(fragment: Fragment)=
+    private fun openFragment(fragment: Fragment) =
             supportFragmentManager.beginTransaction().apply {
                 var d = intent.getStringExtra(EXTRA_DATA)
                 val myBundle= Bundle()

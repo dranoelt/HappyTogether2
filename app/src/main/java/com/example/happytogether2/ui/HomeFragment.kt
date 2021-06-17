@@ -1,22 +1,14 @@
 package com.example.happytogether2.ui
 
-import android.content.Intent
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.happytogether2.Login.EXTRA_DATA
-import com.example.happytogether2.MainActivity
-import com.example.happytogether2.R
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.happytogether2.databinding.HomeFragmentBinding
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
-import com.google.android.gms.ads.OnUserEarnedRewardListener
+import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
@@ -39,7 +31,7 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = HomeFragmentBinding.inflate(inflater, container, false)
         val view = binding.root
-        MobileAds.initialize(this.context) {
+        MobileAds.initialize(this.requireContext()) {
             binding.adView.loadAd(AdRequest.Builder().build())
 
             binding.adView.adListener = object : AdListener() {
@@ -47,7 +39,7 @@ class HomeFragment : Fragment() {
             }
             binding.button2.visibility = View.GONE
             binding.button3.visibility = View.GONE
-            InterstitialAd.load(this.context,"ca-app-pub-3940256099942544/1033173712",AdRequest.Builder().build(),object : InterstitialAdLoadCallback(){
+            InterstitialAd.load(this.requireContext(),"ca-app-pub-3940256099942544/1033173712",AdRequest.Builder().build(),object : InterstitialAdLoadCallback(){
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     Toast.makeText(this@HomeFragment.context, "load failed",Toast.LENGTH_SHORT).show()
 
@@ -61,7 +53,7 @@ class HomeFragment : Fragment() {
                 }
             })
             // rewarded ad
-            RewardedAd.load(this.context,"ca-app-pub-3940256099942544/5224354917",AdRequest.Builder().build(),object : RewardedAdLoadCallback(){
+            RewardedAd.load(this.requireContext(),"ca-app-pub-3940256099942544/5224354917",AdRequest.Builder().build(),object : RewardedAdLoadCallback(){
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
                     Toast.makeText(this@HomeFragment.context,"Load falied",Toast.LENGTH_SHORT).show()
@@ -77,7 +69,7 @@ class HomeFragment : Fragment() {
             binding.button3.setOnClickListener {
 
                     if(mInterAds!=null){
-                        mInterAds?.show(this.activity)
+                        mInterAds?.show(this.requireActivity())
                     }
 
 
@@ -88,7 +80,7 @@ class HomeFragment : Fragment() {
                     var type = "coin "
                     var amount = 0
                     if (mRewardVid!=null){
-                        mRewardVid?.show(this.activity, OnUserEarnedRewardListener {
+                        mRewardVid?.show(this.requireActivity(), OnUserEarnedRewardListener {
                             amount = 10000
                             binding.textView2.setText("$type = $amount")
                         })

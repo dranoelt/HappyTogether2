@@ -1,12 +1,9 @@
 package com.example.happytogether2
 
-import android.app.Application
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.room.Room
@@ -14,7 +11,6 @@ import com.example.happytogether2.Login.LoginFragment
 import com.example.happytogether2.database.HistoryTransaction
 import com.example.happytogether2.database.MyDBRoomHelper
 import com.example.happytogether2.database.User
-import com.example.happytogether2.database.UserDAO
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
