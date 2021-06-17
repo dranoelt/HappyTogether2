@@ -18,6 +18,9 @@ import com.example.happytogether2.ui.CartFragment
 import com.example.happytogether2.ui.HomeFragment
 import com.example.happytogether2.ui.MessagesFragment
 import com.example.happytogether2.ui.ProfileFragment
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.jetbrains.anko.doAsync
 
@@ -31,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+
+
+
 
         if (savedInstanceState == null) {
             supportFragmentManager.commit {

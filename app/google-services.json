@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "28875439381",
-    "project_id": "firstproject-2c9e8",
-    "storage_bucket": "firstproject-2c9e8.appspot.com"
+    "project_number": "592318220066",
+    "project_id": "happytogetherad",
+    "storage_bucket": "happytogetherad.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:28875439381:android:f7013ae54259f96e027d1c",
+        "mobilesdk_app_id": "1:592318220066:android:2061bad6df3c5bbc05877b",
         "android_client_info": {
-          "package_name": "com.example.myapplication2"
+          "package_name": "com.example.happytogether2"
         }
       },
       "oauth_client": [
         {
-          "client_id": "28875439381-499mg73he4k01up1s3kf8ooenfnhr0ap.apps.googleusercontent.com",
+          "client_id": "592318220066-sgbsr5ops284n6pmchm00p8kd0noil6f.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBiEQh5JVO7iA3r9k1B18OCQ8SIv6nfz0E"
+          "current_key": "AIzaSyDrRW_sSrUmYf-lrPVVg9r6rc_e-ZXtwuQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "28875439381-499mg73he4k01up1s3kf8ooenfnhr0ap.apps.googleusercontent.com",
+              "client_id": "592318220066-sgbsr5ops284n6pmchm00p8kd0noil6f.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

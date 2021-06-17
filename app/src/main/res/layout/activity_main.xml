@@ -16,6 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -30,5 +32,6 @@
         app:itemTextColor="@color/bottom_nav_item_selector"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

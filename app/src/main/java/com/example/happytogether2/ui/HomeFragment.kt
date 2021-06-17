@@ -11,6 +11,9 @@ import com.example.happytogether2.Login.EXTRA_DATA
 import com.example.happytogether2.MainActivity
 import com.example.happytogether2.R
 import com.example.happytogether2.databinding.HomeFragmentBinding
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 
 class HomeFragment : Fragment() {
 
@@ -28,13 +31,22 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = HomeFragmentBinding.inflate(inflater, container, false)
         val view = binding.root
+        MobileAds.initialize(this.context) {
+            binding.adView.loadAd(AdRequest.Builder().build())
 
+            binding.adView.adListener = object : AdListener() {
+
+            }
+        }
 
         return view
+
     }
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         viewModel = ViewModelProvider(this).get(FragmentViewModel::class.java)
         // TODO: Use the ViewModel
     }
